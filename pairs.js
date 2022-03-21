@@ -35,38 +35,38 @@
 Array.prototype.getRandom = function () {
   return this.splice(Math.floor(Math.random() * this.length), 1)[0];
 };
-var arrayFinal = [];
-function pairs(names) {
-  // Your code goes here
-  if (names === undefined) {
-    return [];
-  } else if (names.length === 0) {
-    return;
-  } else if (names.length === 1) {
-    arrayFinal.push(names);
-    return;
-  } else {
-    arrayFinal.push([names.getRandom(), names.getRandom()]);
-    pairs(names);
-    return arrayFinal;
-  }
-}
-
+// var arrayFinal = [];
 // function pairs(names) {
 //   // Your code goes here
-//   if (names === undefined || names.length === 0) {
+//   if (names === undefined) {
 //     return [];
+//   } else if (names.length === 0) {
+//     return;
+//   } else if (names.length === 1) {
+//     arrayFinal.push(names);
+//     return;
 //   } else {
-//     let array1 = [];
-//     while (names.length > 1) {
-//       array1.push([names.getRandom(), names.getRandom()]);
-//     }
-//     if (names.length === 1) {
-//       array1.push(names);
-//     }
-//     return array1;
+//     arrayFinal.push([names.getRandom(), names.getRandom()]);
+//     pairs(names);
+//     return arrayFinal;
 //   }
 // }
+
+function pairs(names) {
+  // Your code goes here
+  if (names === undefined || names.length === 0) {
+    return [];
+  } else {
+    let array1 = [];
+    while (names.length > 1) {
+      array1.push([names.getRandom(), names.getRandom()]);
+    }
+    if (names.length === 1) {
+      array1.push(names);
+    }
+    return array1;
+  }
+}
 
 module.exports = pairs;
 
