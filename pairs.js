@@ -36,12 +36,61 @@ Array.prototype.getRandom = function () {
   return this.splice(Math.floor(Math.random() * this.length), 1)[0];
 };
 
+// function pairs(names) {
+//   // Your code goes here
+//   if (names === undefined) {
+//     return [];
+//   } else if (names.length === 0) {
+//     return [];
+//   } else if (names.length === 1) {
+//     return names[0];
+//   } else {
+//     let array1 = [names.getRandom(), names.getRandom()];
+//     return [array1, pairs(names)];
+//   }
+// }
+
+// function pairs(names) {
+//   // Your code goes here
+//   if (names === undefined) {
+//     return [];
+//   } else if (names.length === 0) {
+//     return [];
+//   } else {
+//     let array1 = [];
+//     while (names.length > 0) {
+//       if (names.length === 1) {
+//         array1.push(names[0]);
+//       } else {
+//         array1.push([names.getRandom(), names.getRandom()]);
+//       }
+//     }
+//     return array1;
+//   }
+// }
 function pairs(names) {
   // Your code goes here
+  if (names === undefined) {
+    return [];
+  } else if (names.length === 0) {
+    return [];
+  } else {
+    let array1 = [];
+    while (names.length > 1) {
+      array1.push([names.getRandom(), names.getRandom()]);
+    }
+    if (names.length === 1) {
+      array1.push(names);
+    }
+    return array1;
+  }
 }
 
 module.exports = pairs;
 
+// console.log(
+//   pairs(["Asis", "Hamsa", "Fawas", "Mishmish", "Hussein", "Lailz", "Mr Potato"])
+// );
 console.log(
   pairs(["Asis", "Hamsa", "Fawas", "Mishmish", "Hussein", "Lailz", "Mr Potato"])
 );
